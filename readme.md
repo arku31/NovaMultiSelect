@@ -2,10 +2,11 @@
 
 2. Add in your composer.json
 
-```{
-               "type": "path",
-               "url": "./nova-components/Multiselect"
-   }
+```
+{
+   "type": "path",
+   "url": "./nova-components/Multiselect"
+}
 ```
 
 3. Edit your Nova resource fields method
