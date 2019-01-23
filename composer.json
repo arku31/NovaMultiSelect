@@ -1,9 +1,10 @@
 {
-    "name": "nova/multiselect",
-    "description": "A Laravel Nova field.",
+    "name": "arku/nova-multiselect",
+    "description": "A Laravel Nova Multiselect Implementation.",
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        "multiselect"
     ],
     "license": "MIT",
     "require": {
