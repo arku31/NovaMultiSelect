@@ -1,12 +1,13 @@
 <template>
     <default-field :field="field" :errors="errors">
         <template slot="field">
-            <select class="laravel-nova-select2" multiple="multiple" :id="field.name"></select>
+            <select ref="multiselect" multiple="multiple" :id="field.name"></select>
         </template>
     </default-field>
 </template>
 
 <script>
+
 import { FormField, HandlesValidationErrors } from 'laravel-nova'
 import $ from 'jquery';
 import 'select2';
@@ -22,8 +23,9 @@ export default {
          * Set the initial, internal value for the field.
          */
         setInitialValue() {
-            this.value = this.field.value || ''
-            $(".laravel-nova-select2").select2({
+            this.value = this.field.value || '';
+
+            $(this.$refs.multiselect).select2({
                 width: '100%', // need to override the changed default
                 data: this.field.options
             });
@@ -33,7 +35,7 @@ export default {
          * Fill the given FormData object with the field's internal value.
          */
         fill(formData) {
-            const values = JSON.stringify($(".laravel-nova-select2").val());
+            const values = JSON.stringify($(this.$refs.multiselect).val());
             formData.append(this.field.attribute, values || '')
         },
 
